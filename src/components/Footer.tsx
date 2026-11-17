@@ -15,8 +15,8 @@ export default function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-8 px-4 py-16 sm:px-6 md:flex-row md:items-center md:justify-between md:py-20">
         <Link href="/" className="flex items-center gap-2">
-          <AppLogo size={36} />
-          <span className="text-base font-bold tracking-tight text-foreground">Harindra</span>
+          <AppLogo size={70} />
+          <span className="text-2xl font-bold tracking-tight text-foreground">Harindra</span>
         </Link>
 
         <nav className="flex flex-wrap items-center gap-x-8 gap-y-3" aria-label="Footer">

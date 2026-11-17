@@ -27,8 +27,8 @@ export default function Header() {
     <header className="absolute top-0 left-0 z-50 w-full">
       <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <AppLogo size={40} />
-          <span className="text-lg font-bold tracking-tight text-foreground">Harindra</span>
+          <AppLogo size={70} />
+          <span className="text-2xl font-bold tracking-tight text-foreground">Harindra</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
