@@ -42,7 +42,7 @@ export default function CvDownloadButton({
     const a = document.createElement('a');
 
     a.href = CV_URL;
-    a.download = 'G_H_H_Harindra_CV.pdf';
+    a.download = 'G_H_Harindra_CV.pdf';
 
     document.body.appendChild(a);
     a.click();
@@ -76,7 +76,7 @@ export default function CvDownloadButton({
 
     if (status === 'sending') return;
 
-    // Validate actual access key.
+    // Validate access key.
     if (!UUID_PATTERN.test(ACCESS_KEY)) {
       setStatus('error');
       setErrorMsg(
@@ -115,7 +115,7 @@ export default function CvDownloadButton({
       // Reset form after successful submission.
       form.reset();
 
-      // Download CV only after Web3Forms confirms success.
+      // Download CV only after successful submission.
       triggerDownload();
 
       setStatus('success');
@@ -129,6 +129,15 @@ export default function CvDownloadButton({
           : 'Network error. Please try again.'
       );
     }
+  };
+
+  // Cancel form without submitting or downloading.
+  const handleCancel = () => {
+    if (status === 'sending') return;
+
+    setOpen(false);
+    setStatus('idle');
+    setErrorMsg('');
   };
 
   return (
@@ -151,24 +160,14 @@ export default function CvDownloadButton({
           aria-modal="true"
           aria-labelledby="cv-dialog-title"
           onClick={() => {
-            if (status !== 'sending') setOpen(false);
+            if (status !== 'sending') handleCancel();
           }}
         >
           <div
             className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-2xl sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button
-              type="button"
-              aria-label="Close dialog"
-              disabled={status === 'sending'}
-              onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-foreground disabled:opacity-40"
-            >
-              <Icon name="XMarkIcon" size={20} />
-            </button>
-
+            {/* Heading */}
             <p className="font-mono-tech text-xs uppercase tracking-[0.2em] text-accent">
               Resume Request
             </p>
@@ -290,7 +289,9 @@ export default function CvDownloadButton({
                     className="mb-1 block text-sm font-medium text-card-foreground"
                   >
                     Organization
-                    <span className="ml-1 text-muted-foreground">(Optional)</span>
+                    <span className="ml-1 text-muted-foreground">
+                      (Optional)
+                    </span>
                   </label>
 
                   <input
@@ -310,7 +311,9 @@ export default function CvDownloadButton({
                     className="mb-1 block text-sm font-medium text-card-foreground"
                   >
                     Designation
-                    <span className="ml-1 text-muted-foreground">(Optional)</span>
+                    <span className="ml-1 text-muted-foreground">
+                      (Optional)
+                    </span>
                   </label>
 
                   <input
@@ -330,7 +333,9 @@ export default function CvDownloadButton({
                     className="mb-1 block text-sm font-medium text-card-foreground"
                   >
                     LinkedIn Profile
-                    <span className="ml-1 text-muted-foreground">(Optional)</span>
+                    <span className="ml-1 text-muted-foreground">
+                      (Optional)
+                    </span>
                   </label>
 
                   <input
@@ -349,7 +354,9 @@ export default function CvDownloadButton({
                     className="mb-1 block text-sm font-medium text-card-foreground"
                   >
                     Description
-                    <span className="ml-1 text-muted-foreground">(Optional)</span>
+                    <span className="ml-1 text-muted-foreground">
+                      (Optional)
+                    </span>
                   </label>
 
                   <textarea
@@ -371,7 +378,7 @@ export default function CvDownloadButton({
                   </p>
                 )}
 
-                {/* Submit Button */}
+                {/* Submit & Download CV Button */}
                 <button
                   type="submit"
                   disabled={status === 'sending'}
@@ -385,6 +392,16 @@ export default function CvDownloadButton({
                       Submit & Download CV
                     </>
                   )}
+                </button>
+
+                {/* Cancel Button */}
+                <button
+                  type="button"
+                  onClick={handleCancel}
+                  disabled={status === 'sending'}
+                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border border-border bg-transparent px-6 text-sm font-semibold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  Cancel
                 </button>
 
                 <p className="text-center text-xs text-muted-foreground">
