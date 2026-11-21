@@ -38,6 +38,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://harindra1278.github.io
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
 
       - name: Upload static website
         uses: actions/upload-pages-artifact@v3
