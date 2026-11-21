@@ -108,7 +108,7 @@ export default function HeroSection() {
               <div className="mb-5 flex justify-center">
                 <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-primary">
                   <AppImage
-                    src="/assets/images/no_image.png"
+                    src="/assets/images/hari.jpg"
                     alt="Portrait of Gummadapu Harshitha Harindra, UAV software engineer"
                     fill
                     unoptimized
@@ -125,7 +125,7 @@ export default function HeroSection() {
               <dl className="space-y-4">
                 <div className="flex items-baseline justify-between border-b border-border pb-3">
                   <dt className="text-sm text-muted-foreground">Experience</dt>
-                  <dd className="font-mono-tech text-lg font-semibold text-foreground">2.4+ yrs</dd>
+                  <dd className="font-mono-tech text-lg font-semibold text-foreground">2.6+ yrs</dd>
                 </div>
                 <div className="flex items-baseline justify-between border-b border-border pb-3">
                   <dt className="text-sm text-muted-foreground">Primary stack</dt>
@@ -137,7 +137,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-baseline justify-between">
                   <dt className="text-sm text-muted-foreground">Base</dt>
-                  <dd className="font-mono-tech text-sm font-semibold text-foreground">Vayukah Drone Systems</dd>
+                  <dd className="font-mono-tech text-sm font-semibold text-foreground">Vijayawada</dd>
                 </div>
               </dl>
             </div>
