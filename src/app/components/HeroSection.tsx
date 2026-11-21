@@ -75,8 +75,7 @@ export default function HeroSection() {
           <div className="lg:col-span-8">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-border bg-background/70 px-4 py-2">
               <span className="animate-pulse-dot h-2 w-2 rounded-full bg-accent" />
-              <span className="font-mono-tech text-xs uppercase tracking-[0.2em] text-accent">
-                Available · UAV Software Engineer
+              <span className="font-mono-tech text-xs uppercase tracking-[0.2em] text-accent"> UAV Software Engineer
               </span>
             </div>
             <h1 id="hero-title" className="text-hero-xl font-extrabold text-foreground">
